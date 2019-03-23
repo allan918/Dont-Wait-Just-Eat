@@ -1,0 +1,860 @@
+html {
+    scroll-behavior: smooth;
+    min-width: 320px;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    padding-top: 55px;
+}
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: rgba(0,0,0, 0.5);
+    z-index:3000;
+  }
+  .popup_inner {
+      padding:5%;
+    position: absolute;
+    right: 25%;
+    top: 25%;
+    left:25%;
+    margin: auto;
+    background: white;
+  }
+  .navbar .username p{
+      padding:0
+  }
+  .popup_inner .card{
+      margin-top: 10%;
+      border: 3px #d32323 solid;
+      text-align: center;
+      color:#d32323;
+      font-size: 2rem;
+  }
+  .popup_inner .card:hover{
+    color:white;
+  }
+  .popup_inner .card svg{
+    display: block;
+    margin: auto;
+      font-size: 3rem;
+  }
+.leaflet-container {
+    height:100%;
+    width: 100%;
+    margin: 0 auto;
+  }
+.selected{
+    background: #d32323!important;
+    color:#fff!important;
+    cursor: pointer !important;
+}
+.not-selected{
+    background: #fff;
+    color:#29445B !important;
+    cursor: pointer !important;
+}
+
+section img {
+    margin-left: 30%;
+}
+.w-100{
+    opacity:0;
+}
+#locateme{
+    cursor:pointer;
+}
+#button_error{
+    color: #d32323;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+}
+#overlay{
+    position: fixed; /* Sit on top of the page content */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2000; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+.navbar-brand img {
+    width: 30px;
+    height: 30px;
+}
+
+.navbar-brand {
+    color: #d32323 !important;
+}
+
+
+
+.walkthrough {
+    list-style: decimal;
+}
+
+p {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.navbar {
+    width: 100vw;
+}
+
+.title {
+    background-image: url("./img/food/head1.jpg");
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 14px 20px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+#waitView{
+    z-index:1000
+}
+.jumbotron {
+    background-color: rgba(193, 238, 255, 0.5);
+    margin-bottom: 0;
+    text-shadow: 0px 0px 12px #FFFFFF;
+}
+
+.btn-select {
+    background-color: #f5f5f5;
+    border: 1px solid #29445B;
+    color: #29445B;
+}
+
+.btn-select:hover {
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 8px 20px 0 rgba(0,0,0,0.19);
+    background: #d32323!important;
+    color:#fff!important;
+    cursor: pointer !important;
+}
+
+
+
+.jumbotron h1,
+.jumbotron p {
+    text-align: center;
+    font-weight: bold;
+}
+
+.jumbotron h1 {
+    color: #d32323;
+    -webkit-text-stroke: #FFFFFF 1px;
+    text-shadow:
+        1px 1px 0 #FFF,
+        -1px -1px 0 #FFF,
+        1px -1px 0 #FFF,
+        -1px 1px 0 #FFF;
+
+}
+
+.autocomplete{
+    position: absolute;
+  border-radius: 2px;
+  border-top: 1px solid #d9d9d9;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+  height:100px;
+  background:white;
+  list-style: none;
+}
+
+.autocomplete li{
+    padding-left:1rem;
+    color:#495057;
+    font-size: 1rem;
+}
+.autocomplete li:hover{ 
+    background-color: lightgray;
+    cursor:pointer;
+}
+
+
+.section-title {
+    font-size:2rem;
+    text-align: center !important;
+    font-weight: bold !important;
+
+}
+
+.loc {
+    background: url("./img/waiting_1.jpeg") center no-repeat !important;
+    background-size: cover;
+}
+
+.loc .wrapper {
+    background-color: rgba(255, 255, 255, .8);
+}
+
+
+.loc,
+.reservation {
+    background-color: #f5f5f5;
+}
+
+.loc button,
+.btn-primary:hover,
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show>.btn-primary.dropdown-toggle {
+    background-color: #d32323;
+    border-color: #d32323;
+}
+
+.loc a.btn,
+#reserveBtn {
+    background-color: #29445B;
+    border-color: #29445B;
+}
+
+#updateWait {
+    background-color: #d32323;
+    border-color: #d32323;
+}
+
+.loc .form-control {
+    height: 3rem;
+}
+
+.loc .jumbotron button {
+    margin-top: 0rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.loc .jumbotron input {
+    margin-top: 1.5rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card-body,
+footer .container {
+    padding: 0;
+}
+
+.loc .display-4 {
+    font-size: 3rem;
+}
+
+.map h4,
+.reservation form h4 {
+    text-align: center;
+    margin-top: 1.4rem;
+}
+
+.reservation form {
+    width: 100%;
+}
+
+.btn-dark .fa,
+.btn-dark .fas,
+.btn-dark .far {
+    color: white;
+}
+
+a.btn-dark {
+    color: white !important;
+}
+
+
+.no-reserve,
+.reserve-success,.reserve-update {
+    text-align: center;
+
+}
+
+#waitView .card {
+    height: 30rem;
+    overflow: scroll;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    padding-left: 11px;
+}
+
+.map .btn-dark:active,
+.map .btn-dark:hover {
+    background-color: #29445B !important;
+    border-color: #29445B !important;
+}
+
+.waitTimeTable {
+    color: #29445B;
+}
+
+.waitTimeTable tr,
+.waitTimeTable th {
+    height: 3rem;
+    width: 50rem;
+}
+
+
+
+.waitTimeTable td,
+.waitTimeTable th {
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+}
+
+.waitTimeTable tbody tr td:nth-child(even) span {
+    padding-top: 1rem;
+    margin-right: 1rem;
+}
+
+
+.waitTimeTable tbody tr:hover {
+    background-color: beige;
+    transition: 0.5s ease;
+}
+
+
+.footer {
+    height: 100px;
+    overflow: hidden;
+}
+
+.copyright {
+    width: 100vw;
+    margin: 0;
+}
+
+.copyright ul li a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.5rem;
+}
+
+.copyright:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    max-height: 100px;
+    height: 100px;
+    overflow: hidden;
+    background: url("./img/copyright.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(3px);
+}
+
+.copyright p,
+.copyright ul {
+    text-align: center;
+    margin: 0;
+    color: white;
+}
+
+.copyright ul,
+.copyright li {
+    list-style: none;
+    display: inline;
+}
+
+.mapBox {
+    height: 30rem;
+}
+
+.marker ,.mapMarker{
+    cursor:pointer;
+}
+
+.mapMarker{
+    color: crimson;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+}
+
+.mapMarker:hover{
+    text-decoration: underline;
+}
+
+
+footer .container {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#restBody {
+    display: flex;
+}
+
+#restPictures{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+#restPics img {
+    height: 220px;
+    margin: 20px;
+
+    box-shadow: 6px 6px 5px grey;
+}
+
+#aboutRestName {
+
+    font-weight: bold;
+    font-size: 40px;
+    color: darkred;
+    
+    background-color: beige;
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+    
+}
+
+#restBody h4 {
+    font-weight: 700;
+}
+
+#cuisine {
+    font-size: 20px;
+    padding: 0;
+}
+
+#aboutRestPage h2, #aboutRestPage h4, #restBody {
+    padding: 10px;
+}
+
+#aboutRestPage{
+    background-color: rgba(207, 200, 160, 0.226);
+}
+#reviews h2 {
+    font-weight:700;
+    font-size: 20px;
+}
+
+#reviews {
+    padding: 10px;
+    background-color: lightyellow;
+}
+
+.review h3 {
+    padding-left: 20px;
+    font-size: 15px;
+}
+
+.reviewDesc{
+    font-size:13px;
+    padding: 5px;
+    margin:0;
+}
+
+.navbar-brand{
+    font-size:1rem;
+}
+
+
+
+.button-group ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-inline-start: 0px;
+    margin-left:12%;
+    margin-right:12%;
+    margin-bottom:0px;
+}
+
+.button-group ul li{
+    display: block;
+    width: 100%;
+    margin: 3px;
+}
+
+
+
+#locateme{
+    width: 50%;
+    margin: 0 auto 2%;
+}
+
+
+#search_place{
+
+    margin: 0 10% 0 10% !important;
+}
+
+
+
+#searchLoc{
+    margin: 0 10% 0 10% !important;
+    height: 48px !important;
+}
+.loc .wrapper h4{
+    width: 100%;
+    margin: 0 auto;
+}
+
+#log-in{
+    margin: 3px 15px 3px 0px;
+    padding: 4px 0;
+}
+#username{
+    margin: 3px auto 3px auto;
+    display: inline;
+}
+#username p{
+    text-align: center;
+    display: inline;
+}
+#logged-in-pane{
+    background-color: lightgray;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 3px auto 3px 0px;
+    padding: 4px 20px;
+    
+}
+
+#log-out{
+    margin: 0 auto 10px 15px;
+    text-align: center;
+    display: inline;
+}
+
+#about-bg{
+    background-color: rgba(207, 200, 160, 0.226);
+}
+
+.headername{
+    display: table;
+    margin: 0 auto;
+    font-weight: 900;
+    padding: 15px 0 10px 0;
+}
+.memberName{
+    text-align: center;
+    font-weight: 600;
+    margin: 5px 0 5px 0;
+}
+
+.about-card-img-top{
+    display: table;
+    margin: 12px auto;
+    width: 120px;
+    height: 120px;
+}
+
+.about-card{
+    width:85%;
+    margin: 5px auto 10px auto;
+    background-color: beige;
+    padding-bottom: 5px;
+}
+
+.about-card-text{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+.about-app-Font{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.about-bottom-bg{
+    padding-bottom: 20px;
+}
+.about-app-Font li{
+    margin-left: 35px;
+}
+
+.reservation-list{
+    display: table;
+    text-align: center;
+    width:85%;
+    margin: 5px auto 10px auto !important;
+    background-color: beige
+}
+
+
+.reservation-list li{
+    text-align: center;
+    margin-left: 15px;
+}
+
+#reservation-title{
+    text-align: center !important;
+    font-weight: 900;
+    margin-top: 5px;
+    margin-left: 0px;
+}
+
+#reservation-main-title{
+    padding: 15px 0px 10px 0px;
+}
+
+#aboutRestPage{
+    padding:2rem;
+}
+
+#reservation-bottom{
+    margin-bottom: 5px;
+}
+
+#reservations-bg{
+    background-color: rgba(207, 200, 160, 0.226);
+    padding-bottom: 20px;
+}
+
+.card {
+    border-radius: 20px !important;
+    box-shadow: 3px 3px 3px rgb(56, 55, 55) !important;
+}
+
+#mainMap div{
+    border-radius:15px;
+}
+#mainMap div a{
+    border-radius:15px;
+}
+#yelp{
+    color:white;
+}
+#map-marker-img{
+    height: 100px;
+    width: 100px;
+    display: table;
+    margin: 13px auto;
+}
+#time-icon{
+    right: 28%;
+    position: fixed;
+    cursor: pointer;
+}
+.error-out{
+    color:red;
+}
+#restaurant-picture{
+    width: 10rem;
+}
+@media(min-width: 380px) {
+    .navbar-brand{
+        font-size: 1.3rem;
+    }
+}
+@media(min-width: 576px){
+
+
+    
+#search_place{
+
+    margin-left: auto !important;
+    margin-right: 10px !important;
+    min-width: 55%;
+}
+
+
+
+#searchLoc{
+    margin-right: auto !important;
+    margin-left: initial !important;
+}
+
+    .button-group ul{
+        margin-left:20%;
+        margin-right:20%;
+        
+    }
+
+    #locateme{
+        width: 40%;
+        margin: 0 auto 2%;
+    }
+
+    .reservation-list{
+        width:78%;
+    }
+}
+@media(min-width: 768px) {
+
+    .reservation-list{
+        width:70%;
+    }
+
+    #locateme{
+        width: 30%;
+    }
+
+    #updatewait {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .button-group ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left:30px;
+    margin-right:30px;
+    justify-content: center;
+    }
+    .button-group ul li{
+    width:350px;
+    }
+
+    
+
+    .loc select {
+        margin-left: 0 !important;
+    }
+
+    .loc button {
+        margin-top: 0 !important;
+    }
+
+    .waitTimeTable {
+        width: 70%;
+        margin-left: 15%;
+        text-align: center;
+    }
+
+    .form-group {
+        width: 70%;
+        margin-left: 15%;
+    }
+
+
+
+}
+
+@media (min-width: 992px) {
+    .infoFlex {
+        display: flex;
+        margin-left: 30px;
+        margin-right: 70px;
+    }
+    #centered {
+        margin: auto;
+    }
+    .card {
+        border-radius: 20px !important;
+        box-shadow: 3px 3px 3px rgb(56, 55, 55) !important;
+        margin-left: 10px;
+    }
+    .reservation-list{
+
+        width:60%;
+    }
+    .title {
+        height: 90vh;
+    }
+
+    .jumbotron h1 {
+        font-size: 5rem;
+    }
+
+    .jumbotron .lead {
+        font-size: 2rem;
+    }
+
+    #nav-map {
+        display: none;
+    }
+
+    #logged-in-pane, #log-in{
+        position: absolute;
+        right:0;
+        margin-right: 15px;
+    }
+
+
+
+    #waitView {
+        padding: 0;
+        margin-left: 55%;
+        background-color: #d32323;
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+        border-radius: 20px;
+    }
+
+   
+
+    .outter-wrap #mapview,
+    .outter-wrap #waitView {
+        display: inherit !important;
+    }
+
+    #waitView .card,
+    .waitTimeTable {
+        margin: 0;
+        background: rgba(0, 0, 0, 0);
+        width: 100%;
+        border: none;
+        padding: 0;
+    }
+
+    #mapView {
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .waitTimeTable thead {
+        background: #FFF;
+        color: #d32323;
+    }
+
+    .reservation-form button {
+        margin: 0 20% 0 20%;
+    }
+
+    .waitTimeTable tbody tr,
+    .waitTimeTable tbody td {
+        color: #fff;
+    }
+
+    .overlay {
+        opacity: .7;
+        z-index: 2000;
+    }
+}
+
+@media(min-width: 992px) and (max-height: 660px){
+    .loc {
+        margin-top:100px !important;
+    }
+}
+
+@media(min-width: 1200px){
+    .reservation-list{
+        width:40%;
+    }
+    .button-group{
+        width:1200px;
+        display:table;
+        margin: 0 auto;
+    }
+
+    #location{
+        width:1200px;
+        display:table;
+        margin: 0 auto;
+    }
+
+}
