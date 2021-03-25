@@ -5,9 +5,6 @@ This repository contains code for an interactive React web app bootstrapped with
 ## Authors: Yiren Qu, Xifei Wang, Jarett Lund-Hopkins, Seth Anderson
 
 ### The site can be viewed at:
-<https://foodie-map-b331b.firebaseapp.com> 
-
-OR
 
 <https://info340b-wi19.github.io/Dont-Wait-Just-Eat/>
 
